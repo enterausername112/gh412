@@ -124,7 +124,5 @@ font-size : 20;
 }
 
 .icons-discard{
-	   position: relative;
-   top: 100%;
-   transform: translateY(-100%);
+float : right;
 }
