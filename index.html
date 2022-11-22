@@ -63,6 +63,11 @@ switch(t[0])
 		t[1].forEach(function (i){print_icon(l,i,"icon-sub")})
 		div.appendChild(l)
 		break	
+	case "discard":
+		var l = document.createElement("div")
+		l.setAttribute("class","icons-discard")
+		t[1].forEach(function (i){print_icon(l,i,"icon")})
+		div.appendChild(l)			
 		break
 	default :
 		var t_card = document.createElement("p")
@@ -226,7 +231,7 @@ var ability=[{"name":"Amber Aegis","cat":"amber-aegis"},[
 "bottom":[["effect",["move","4","jump"]],["sub",["cible groupe adjacent a","ter-roche"]]]},
 {"id":"AAAB03","title":"Assimiler","init":"50","cat":"*",
 "top":[["effect",["eliminate","5"]],["sub",["remplacer l'ennemi vaincu par une colonie","N"]],["discard","destroy"]],
-"bottom":[["effect",["when you kill an ennemy","heal","2","xp"]],["sub",["infinite","destroy"]]]}
+"bottom":[["effect",["when you kill an ennemy","heal","2","xp"]],["discard",["infinite","destroy"]]]}
 
 ]]
 
