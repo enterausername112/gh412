@@ -217,9 +217,13 @@ var ability=[{"name":"Amber Aegis","cat":"amber-aegis"},[
 {"id":"AAAB01","title":"anti venin","init":"73","cat":"B",
 "top":[["effect",["heal","2"]],["sub",["use-N","->","heal","+2"]],["sub",["si","poison","soigné","->","poison","xp"]]],
 "bottom":[["effect",["move","3","  ","N"]]]},
-{"id":"AAAB02","title":"Termite dispersive","init":"58","cat":"*",
+{"id":"AAAB02","title":"Termite dispersive","init":"58","cat":"L",
 "top":[["effect",["placer","ter-roche","range","2","N"]]],
 "bottom":[["effect",["move","4","jump"]],["sub",["cible groupe adjacent a","ter-roche"]]]},
+{"id":"AAAB03","title":"Assimiler","init":"50","cat":"*",
+"top":[["effect",["eliminate","5"]],["sub",["remplacer l'ennemi vaincu par une colonie","N"]],["discard","destroy"],
+"bottom":[["effect",["when you kill an ennemy","heal","2","xp"]],["sub",["infinite","destroy"]]]},
+
 ]]
 
 const ability_div= document.getElementById("ability-cards")
