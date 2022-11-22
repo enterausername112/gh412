@@ -122,3 +122,9 @@ font-size : 20;
 	background-color : #b85412;
 	border-color : #f5d72f;
 }
+
+.icons-discard{
+	   position: relative;
+   top: 100%;
+   transform: translateY(-100%);
+}
