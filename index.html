@@ -69,6 +69,21 @@ switch(t[0])
 		t[1].forEach(function (i){print_icon(l,i,"icon")})
 		div.appendChild(l)			
 		break
+	case "amplify":
+		var l = document.createElement("div")
+		l.setAttribute("class","amplify")
+		t[1].forEach(function(i){
+			var c = document.createElement("div")
+			c.setAttribute("class","amplify"+t[1].length)	
+			//top line
+			print_icon(c,"xp","icon")
+			print_icon(c,i.next,"icon")
+			//bot line
+
+			l.appendChild(c)
+		}
+		div.appendChild(l)			
+		break
 	default :
 		var t_card = document.createElement("p")
 		t_card.setAttribute("class",t[0])
@@ -196,7 +211,7 @@ day[i]={
 "id":"D"+i,
 "recto":[["normal","Il ne se passe rien d'inhabituel aujourd'hui"]],
 "verso":[["title","An "+(Math.trunc((i-2)/112)+1)+" "+season[Math.trunc(((i-2)%112)/28)]+" semaine "+Math.trunc(((i-2)%28)/7+1)+" jour "+((i-2)%7+1)]]}
-if (i %14 ==0) {day[i].verso.push(["game"],["Refaire le stock du marchand"])}	
+if (i %14 ==0) {day[i].verso.push([["game"],["Refaire le stock du marchand"]])}	
 }
 
 
@@ -235,7 +250,7 @@ var ability=[{"name":"Amber Aegis","cat":"amber-aegis","ability":[
 "bottom":[["effect",["Quand vous tuez un ennemi","heal","2","xp"]],["discard",["infinite","destroy"]]]}]},
 	{"name":"Perce Esprit","cat":"perce-esprit","ability":[
 	{"id":"PEAB01","title":"Frapper l'esprit","init":"75","cat":"B",
-"top":[["amplify"],[{"to":"next","xp":1,"text":["atk","+","3"]},{"to":"next","xp":1,"text":["atk","+","2"]},{"to":"inf","text":["atk","+","1"]}]],
+"top":[["amplify"],[{"to":"->","xp":1,"text":["atk","+","3"]},{"to":"->","xp":1,"text":["atk","+","2"]},{"to":"inf","text":["atk","+","1"]}]],
 "bottom":[["effect",["move","3","  ","N"]]]}
 	]}
 ]
@@ -243,7 +258,7 @@ var ability=[{"name":"Amber Aegis","cat":"amber-aegis","ability":[
 const ability_div= document.getElementById("ability-cards")
 
 
-ability.forEach(function(cl){cl.ability.forEach(function(ab){print_ability(ability_div,ab,ability[0])})})
+ability.forEach(function(cl){cl.ability.forEach(function(ab){print_ability(ability_div,ab,cl)})})
 </script>
 
 </body>
