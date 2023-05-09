@@ -232,15 +232,13 @@ var ability=[{"name":"Amber Aegis","cat":"amber-aegis","ability":[
 "bottom":[["effect",["move","4","jump"]],["sub",["cible groupe adjacent a","ter-roche"]]]},
 {"id":"AAAB03","title":"Assimiler","init":"50","cat":"*",
 "top":[["effect",["eliminate","5"]],["sub",["remplacer l'ennemi vaincu par une colonie","N"]],["discard",["destroy"]]],
-"bottom":[["effect",["Quand vous tuez un ennemi","heal","2","xp"]],["discard",["infinite","destroy"]]]},
+"bottom":[["effect",["Quand vous tuez un ennemi","heal","2","xp"]],["discard",["infinite","destroy"]]]}]},
 	{"name":"Perce Esprit","cat":"perce-esprit","ability":[
 	{"id":"PEAB01","title":"Frapper l'esprit","init":"75","cat":"B",
-"top":[["effect",["heal","2"]],["sub",["use-N","->","heal","+2"]],["sub",["si","poison","soigné","->","poison","xp"]]],
-"bottom":[["effect",["move","3","  ","N"]]]},
-	]
-	}
-
-]]
+"top":[["effect",["attaque","2"]],["sub",["use-N","->","heal","+2"]],["sub",["si","poison","soigné","->","poison","xp"]]],
+"bottom":[["effect",["move","3","  ","N"]]]}
+	]}
+]
 
 const ability_div= document.getElementById("ability-cards")
 
