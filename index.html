@@ -196,13 +196,14 @@ day[i]={
 "id":"D"+i,
 "recto":[["normal","Il ne se passe rien d'inhabituel aujourd'hui"]],
 "verso":[["title","An "+(Math.trunc((i-2)/112)+1)+" "+season[Math.trunc(((i-2)%112)/28)]+" semaine "+Math.trunc(((i-2)%28)/7+1)+" jour "+((i-2)%7+1)]]}
+	if (i %14 ==0) verso.append(["game"],["Refaire le stock du marchand"]
 }
 
 
 //adding day card content
 
-day[1].verso=[["title","Day Card"],["normal","Au debut de haque nouveau jour retournez une carte de cette pile pour voir les evenement du jour"]]
-day[1].recto=[["title","Welcome mercenaries"],["normal","Le tavernier d lion endormit commence a être tres concerné par votre importante ardoise a payer"],["normal"," Une femme Valrat richement vétu s'approche et vous dit qu'elle peux vous aider avec vos probléme d'argent, des bandits lui ont dérobé des biens qu'une caravane lui devait lui livrer et elle est prete a vous payer 25PO pour les récuperer"],["game","Ajoutez JekSerah N001 a Gloomhaven et gagnez Q001"]]
+day[1].verso=[["title","Carte passage du temps"],["normal","Au debut de haque nouveau jour retournez une carte de cette pile pour voir les evenement du jour."],["normal","Si une carte non passage du temps est inséré dans ce deck resolvez celle ci puis résolvez la carte passage du temps suivante."]
+day[1].recto=[["title","Bienvenue mercenaire"],["normal","Le tavernier d lion endormit commence a être tres concerné par votre importante ardoise a payer"],["normal"," Une femme Valrat richement vétu s'approche et vous dit qu'elle peux vous aider avec vos probléme d'argent, des bandits lui ont dérobé des biens qu'une caravane lui devait lui livrer et elle est prete a vous payer 25PO pour les récuperer"],["game","Ajoutez JekSerah N001 a Gloomhaven et gagnez Q001"]]
 
 day[7].verso=[["title","La garde a besoin d'aide"],["normal","Le chef de la garde vous approche et vous explique que dans cet endroit plein de danger la garde est juste capable de plus moins maintenir en sécurité les gens a intérieur de la ville mais manque cruellement de personnel pour aller chasser toute les terrifiantes créatures qui rode autour de la ville , pour cela la garde a souvent besoin d'aide de la part d'aventrier ou mercenaire pret a risqué leurs vies pour de l'argent, de nouvelle missins seront disponibles de temps en temps"],["game","Ajoutez le capitaine de la garde NOO2 et 5 mission de la garde aléatoire a Gloomhaven"]] 
 
@@ -222,7 +223,7 @@ day.forEach(print_day)
 
 //
 
-var ability=[{"name":"Amber Aegis","cat":"amber-aegis"},[
+var ability=[{"name":"Amber Aegis","cat":"amber-aegis","ability":[
 {"id":"AAAB01","title":"anti venin","init":"73","cat":"B",
 "top":[["effect",["heal","2"]],["sub",["use-N","->","heal","+2"]],["sub",["si","poison","soigné","->","poison","xp"]]],
 "bottom":[["effect",["move","3","  ","N"]]]},
@@ -231,14 +232,14 @@ var ability=[{"name":"Amber Aegis","cat":"amber-aegis"},[
 "bottom":[["effect",["move","4","jump"]],["sub",["cible groupe adjacent a","ter-roche"]]]},
 {"id":"AAAB03","title":"Assimiler","init":"50","cat":"*",
 "top":[["effect",["eliminate","5"]],["sub",["remplacer l'ennemi vaincu par une colonie","N"]],["discard",["destroy"]]],
-"bottom":[["effect",["when you kill an ennemy","heal","2","xp"]],["discard",["infinite","destroy"]]]}
+"bottom":[["effect",["Quand vous tuez un ennemi","heal","2","xp"]],["discard",["infinite","destroy"]]]}}
 
 ]]
 
 const ability_div= document.getElementById("ability-cards")
 
 
-ability[1].forEach(function(ab){print_ability(ability_div,ab,ability[0])})
+ability[0].ability.forEach(function(ab){print_ability(ability_div,ab,ability[0])})
 </script>
 
 </body>
