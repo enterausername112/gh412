@@ -74,12 +74,12 @@ switch(t[0])
 		l.setAttribute("class","amplify")
 		t[1].forEach(function(i){
 			var c = document.createElement("div")
-			c.setAttribute("class","amplify"+t[1].length)	
+			c.setAttribute("class","icons-ine-sub amplify"+t[1].length)	
 			//top line
 			print_icon(c,"xp","icon")
 			print_icon(c,i.to,"icon")
 			//bot line
-			i.text.forEach(function (j){print_icon(c,j,"icon")})
+			i.text.forEach(function (j){print_icon(c,j,"icon-sub")})
 			l.appendChild(c)
 		})
 		div.appendChild(l)			
